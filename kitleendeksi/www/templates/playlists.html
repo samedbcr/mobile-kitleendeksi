@@ -1,0 +1,44 @@
+<ion-view view-title="Vücut Kitle Endeksi">
+  <ion-content>
+
+ <!-- CARD -->
+  	<div class="card">
+  		<div class="item item-text-wrap item-stable">
+    		<center> Merhaba <b> {{isim}} </b>, <br> Lütfen kilonu ve boyunu gir.</center>
+  		</div>
+	</div>
+
+	<br>
+
+	<div class="list">
+		<!-- KILO -->
+  		<div class="range range-positive">
+  			Kilo(kg)
+		    <input type="range" ng-model="kilo" min="20" max="150" ng-change="hesapla(kilo,boy)">
+		    {{kilo}}
+  		</div>
+  		<!-- BOY -->	
+
+  		<div class="range range-positive">
+  			Boy(cm)
+		    <input type="range" ng-model="boy" min="100" max="200" ng-change="hesapla(kilo,boy)">
+		    {{boy}}
+  		</div>
+	</div>
+
+
+  <div class="card">
+    <div class="item-text-wrap">
+
+      <center> 
+        <img src="{{link}}"> <br>
+        <b> {{durum}} </b> <br>
+        Kitle endeksi: <b>{{kilo/((boy/100)*(boy/100)) | limitTo : 6}} </b> 
+      </center>
+    </div>
+  </div>
+
+      
+ 
+  </ion-content>
+</ion-view>
